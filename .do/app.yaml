@@ -1,0 +1,15 @@
+# Digital Ocean App Platform Spec
+# Import this when creating the app, or use `doctl apps create --spec .do/app.yaml`
+
+name: nostrdevs
+region: nyc
+
+static_sites:
+  - name: web
+    github:
+      repo: nostrdevs/nostrdevs  # Change to your repo
+      branch: main
+      deploy_on_push: true
+    build_command: node build.js
+    output_dir: _site
+    environment_slug: node-js

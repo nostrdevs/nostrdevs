@@ -1,0 +1,63 @@
+name: Post to Nostr
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'items/*.json'
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Need previous commit to diff
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      
+      - name: Install nak
+        run: |
+          curl -L https://github.com/fiatjaf/nak/releases/latest/download/nak-linux-amd64 -o /usr/local/bin/nak
+          chmod +x /usr/local/bin/nak
+      
+      - name: Post new items to Nostr
+        env:
+          NOSTR_NSEC: ${{ secrets.NOSTR_NSEC }}
+        run: |
+          # Get list of added JSON files in items/
+          ADDED_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'items/*.json')
+          
+          if [ -z "$ADDED_FILES" ]; then
+            echo "No new items added"
+            exit 0
+          fi
+          
+          for file in $ADDED_FILES; do
+            echo "Processing $file"
+            
+            TITLE=$(jq -r '.title' "$file")
+            URL=$(jq -r '.url' "$file")
+            
+            if [ "$TITLE" != "null" ] && [ "$URL" != "null" ]; then
+              NOTE="New on NostrDevs: $TITLE
+
+$URL
+
+#nostrdevs #nostr"
+              
+              echo "Posting: $NOTE"
+              
+              echo "$NOTE" | nak event \
+                --sec "$NOSTR_NSEC" \
+                -k 1 \
+                wss://relay.damus.io \
+                wss://nos.lol \
+                wss://relay.nostr.band \
+                wss://relay.primal.net
+            fi
+          done

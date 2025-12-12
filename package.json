@@ -1,0 +1,15 @@
+{
+  "name": "nostrdevs",
+  "version": "1.0.0",
+  "description": "A curated list of nostr development resources for meetup organizers",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx serve _site"
+  },
+  "keywords": ["nostr", "devs", "meetup"],
+  "license": "MIT"
+}
