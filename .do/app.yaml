@@ -13,3 +13,5 @@ static_sites:
     build_command: node build.js
     output_dir: _site
     environment_slug: node-js
+    routes:
+      - path: /
