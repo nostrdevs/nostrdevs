@@ -19,6 +19,7 @@
                     </div>
                     <nav class="Header-nav">
                         <a href="/about.html">About</a>
+                        <a href="/submit.html">Submit</a>
                         <a
                             href="https://github.com/dtdannen/nostrdevs"
                             target="_blank"
@@ -52,96 +53,24 @@
                 </p>
 
                 <main>
-                    <section class="submit-section">
-                        <button id="toggle-submit" class="submit-toggle">
-                            + Submit Item
-                        </button>
-
-                        <form id="submit-form" class="submit-form hidden">
-                            <h3>Submit a New Item</h3>
-                            <p class="form-description">
-                                Fill out the form below to create a GitHub PR
-                                with your submission.
-                            </p>
-
-                            <div class="form-group">
-                                <label for="submit-title">Title *</label>
-                                <input
-                                    type="text"
-                                    id="submit-title"
-                                    required
-                                    placeholder="Brief, descriptive title"
-                                />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="submit-url">URL *</label>
-                                <input
-                                    type="url"
-                                    id="submit-url"
-                                    required
-                                    placeholder="https://example.com/resource"
-                                />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="submit-date">Date *</label>
-                                <input type="date" id="submit-date" required />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="submit-tags"
-                                    >Tags (comma-separated)</label
-                                >
-                                <input
-                                    type="text"
-                                    id="submit-tags"
-                                    placeholder="nips, clients, relays"
-                                />
-                                <small
-                                    >Suggested tags: nips, clients,
-                                    relays</small
-                                >
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="submit" class="submit-btn">
-                                    Create GitHub PR
-                                </button>
-                                <button
-                                    type="button"
-                                    id="cancel-submit"
-                                    class="cancel-btn"
-                                >
-                                    Cancel
-                                </button>
-                            </div>
-                        </form>
-                    </section>
-
                     <div class="Home-posts">
-                        <h2 class="Home-posts-title">Filter Resources</h2>
-                        <div class="filters">
-                            <div class="date-filter">
-                                <label for="since-date"
-                                    >Show items since:</label
-                                >
+                        <div class="Home-posts-header">
+                            <h2 class="Home-posts-title">
+                                Development Resources (<span id="count">0</span>
+                                items)
+                            </h2>
+                            <div class="date-filter-inline">
+                                <label for="since-date">Since:</label>
                                 <input type="date" id="since-date" />
                                 <button id="clear-date">Clear</button>
                             </div>
-
-                            <div class="tag-filters">
-                                <span>Tags:</span>
-                                <div id="tag-buttons"></div>
-                            </div>
                         </div>
-                    </div>
 
-                    <div class="Home-posts">
-                        <h2 class="Home-posts-title">
-                            Development Resources (<span id="count">0</span>
-                            items)
-                        </h2>
+                        <div class="tag-filters">
+                            <span>Tags:</span>
+                            <div id="tag-buttons"></div>
+                        </div>
+
                         <div id="item-list"></div>
                     </div>
                 </main>

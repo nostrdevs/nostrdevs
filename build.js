@@ -63,7 +63,14 @@ async function build() {
   );
 
   // Copy static files
-  const staticFiles = ["index.html", "about.html", "style.css", "app.js"];
+  const staticFiles = [
+    "index.html",
+    "about.html",
+    "submit.html",
+    "style.css",
+    "app.js",
+    "submit.js",
+  ];
   for (const file of staticFiles) {
     if (existsSync(file)) {
       await cp(file, join(OUTPUT_DIR, file));

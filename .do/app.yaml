@@ -7,7 +7,7 @@ region: nyc
 static_sites:
   - name: web
     github:
-      repo: nostrdevs/nostrdevs  # Change to your repo
+      repo: dtdannen/nostrdevs
       branch: main
       deploy_on_push: true
     build_command: node build.js

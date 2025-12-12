@@ -460,43 +460,51 @@ h4 {
 }
 
 /* Filters */
-.filters {
-    margin-bottom: 1.5rem;
+.Home-posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.date-filter {
+.date-filter-inline {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    opacity: 0.8;
 }
 
-.date-filter label {
-    font-weight: 500;
+.date-filter-inline label {
+    font-weight: normal;
 }
 
-.date-filter input {
-    padding: 0.5rem;
+.date-filter-inline input {
+    padding: 0.25rem 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-family: "Source Code Pro", monospace;
+    font-size: 0.9rem;
 }
 
-.date-filter input:focus {
+.date-filter-inline input:focus {
     outline: none;
     border-color: #9333ea;
 }
 
-.date-filter button {
-    padding: 0.5rem 1rem;
+.date-filter-inline button {
+    padding: 0.25rem 0.75rem;
     background: #eee;
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
     font-family: "Source Code Pro", monospace;
+    font-size: 0.9rem;
 }
 
-.date-filter button:hover {
+.date-filter-inline button:hover {
     background: #ddd;
 }
 
