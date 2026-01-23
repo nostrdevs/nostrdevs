@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Events | NostrDevs</title>
+        <title>Feed | NostrDevs</title>
         <link rel="stylesheet" href="style.css" />
         <link
             href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
@@ -47,16 +47,34 @@
                 </div>
             </header>
 
-            <div class="Events">
-                <section class="Events-section">
-                    <h2 class="Events-section-title">Upcoming Events</h2>
-                    <div id="upcoming-events" class="Events-list"></div>
-                </section>
+            <div class="Feed">
+                <div class="Feed-header">
+                    <h2 class="Feed-title">NostrDevs Notes</h2>
+                    <a
+                        href="nostr:npub10a9ljwf4cn367ytwc8zx8q5h3zqe0u0pgurvhcja82lh7n3s5ecqa5hkwx"
+                        class="follow-btn"
+                    >
+                        Follow on Nostr
+                    </a>
+                </div>
 
-                <section class="Events-section">
-                    <h2 class="Events-section-title">Past Events</h2>
-                    <div id="past-events" class="Events-list"></div>
-                </section>
+                <div id="feed-loading" class="Feed-loading">
+                    <span class="Feed-loading-spinner"></span>
+                    Connecting to relays...
+                </div>
+
+                <div id="feed-error" class="Feed-error hidden">
+                    <p>Failed to load notes. Please try again later.</p>
+                    <button id="retry-btn" class="retry-btn">Retry</button>
+                </div>
+
+                <div id="feed-notes" class="Feed-notes"></div>
+
+                <div id="feed-actions" class="Feed-actions hidden">
+                    <button id="load-more-btn" class="load-more-btn">
+                        Load More
+                    </button>
+                </div>
             </div>
 
             <footer class="Footer">
@@ -92,6 +110,6 @@
             </footer>
         </div>
 
-        <script src="events.js"></script>
+        <script type="module" src="feed.js"></script>
     </body>
 </html>
