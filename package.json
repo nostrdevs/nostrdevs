@@ -8,8 +8,17 @@
   },
   "scripts": {
     "build": "node build.js",
-    "dev": "node build.js && npx serve _site"
+    "start": "node server.js",
+    "dev": "node build.js && node server.js"
   },
-  "keywords": ["nostr", "devs", "meetup"],
-  "license": "MIT"
+  "keywords": [
+    "nostr",
+    "devs",
+    "meetup"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "express": "^4.21.0"
+  }
 }

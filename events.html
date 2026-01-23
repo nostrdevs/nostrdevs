@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About - NostrDevs</title>
+        <title>Events | NostrDevs</title>
         <link rel="stylesheet" href="style.css" />
         <link
             href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
@@ -46,62 +46,16 @@
                 </div>
             </header>
 
-            <div class="Home">
-                <h2>About NostrDevs</h2>
+            <div class="Events">
+                <section class="Events-section">
+                    <h2 class="Events-section-title">Upcoming Events</h2>
+                    <div id="upcoming-events" class="Events-list"></div>
+                </section>
 
-                <p class="Home-about">
-                    NostrDevs is a community for those interested in discussing
-                    and participating in the research and development of Nostr
-                    and related protocols.
-                </p>
-
-                <h3>How It Works</h3>
-
-                <p>
-                    This site is a curated collection of Nostr development
-                    resources designed specifically for meetup organizers and
-                    community members. Anyone can submit an item for inclusion
-                    by clicking the "Submit Item" button on the homepage, which
-                    creates a GitHub pull request.
-                </p>
-
-                <p>
-                    Use the date filter to easily view everything new since your
-                    last meetup. Simply select the date of your last gathering,
-                    and you'll see all the resources, updates, and discussions
-                    that have been added since then. This makes it simple to
-                    stay current and prepare for your next community discussion.
-                </p>
-
-                <p>
-                    You can also filter by tags such as "nips" (protocol specs),
-                    "clients" (applications), and "relays" (infrastructure) to
-                    focus on specific areas of interest.
-                </p>
-
-                <h3>Contributing</h3>
-
-                <p>
-                    To contribute a new resource, click the "Submit Item" button
-                    on the homepage. You'll be guided through creating a GitHub
-                    pull request with your submission. All contributions are
-                    welcome!
-                </p>
-
-                <p>
-                    Alternatively, you can manually add a JSON file to the
-                    <code>/items</code> directory in the
-                    <a
-                        href="https://github.com/dtdannen/nostrdevs"
-                        target="_blank"
-                        rel="noopener"
-                        >GitHub repository</a
-                    >.
-                </p>
-
-                <p>
-                    <a href="/">&larr; Back to Resources</a>
-                </p>
+                <section class="Events-section">
+                    <h2 class="Events-section-title">Past Events</h2>
+                    <div id="past-events" class="Events-list"></div>
+                </section>
             </div>
 
             <footer class="Footer">
@@ -136,5 +90,7 @@
                 </div>
             </footer>
         </div>
+
+        <script src="events.js"></script>
     </body>
 </html>

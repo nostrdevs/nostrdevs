@@ -459,6 +459,80 @@ h4 {
     background: #ddd;
 }
 
+/* AI Form Fill */
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: "Source Code Pro", monospace;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: #9333ea;
+}
+
+.ai-fill-section {
+    margin: 1.5rem 0;
+}
+
+.ai-fill-btn {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: "Source Code Pro", monospace;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(147, 51, 234, 0.3);
+}
+
+.ai-fill-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);
+    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.4);
+    transform: translateY(-1px);
+}
+
+.ai-fill-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.ai-fill-loading {
+    display: inline-block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.form-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.form-divider::before,
+.form-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-divider span {
+    padding: 0 1rem;
+}
+
 /* Filters */
 .Home-posts-header {
     display: flex;
@@ -543,4 +617,54 @@ h4 {
     background: #9333ea;
     color: #fff;
     border-color: #9333ea;
+}
+
+/* Events */
+.Events {
+    margin-bottom: 2rem;
+}
+
+.Events-section {
+    margin-bottom: 2rem;
+}
+
+.Events-section:last-child {
+    margin-bottom: 0;
+}
+
+.Events-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.Events-list {
+    margin-bottom: 1rem;
+}
+
+.Events-event {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.Events-event-date {
+    opacity: 0.8;
+}
+
+.Events-event-arrow {
+    opacity: 0.5;
+    margin: 0 0.5ch;
+}
+
+.Events-event-title {
+    color: #9333ea;
+}
+
+.Events-event-title:hover {
+    color: rgba(147, 51, 234, 0.8);
+}
+
+.Events-empty {
+    opacity: 0.6;
+    font-style: italic;
 }
