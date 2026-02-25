@@ -124,6 +124,18 @@ Respond with ONLY valid JSON in this exact format, no markdown:
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+function startServer(port) {
+  const server = app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+  });
+  server.on("error", (err) => {
+    if (err.code === "EADDRINUSE") {
+      console.log(`Port ${port} in use, trying ${port + 1}...`);
+      startServer(port + 1);
+    } else {
+      throw err;
+    }
+  });
+}
+
+startServer(Number(PORT));
