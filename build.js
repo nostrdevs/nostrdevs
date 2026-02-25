@@ -114,11 +114,13 @@ async function build() {
     "submit.html",
     "events.html",
     "feed.html",
+    "diff.html",
     "style.css",
     "app.js",
     "submit.js",
     "events.js",
     "feed.js",
+    "diff.js",
   ];
   for (const file of staticFiles) {
     if (existsSync(file)) {
