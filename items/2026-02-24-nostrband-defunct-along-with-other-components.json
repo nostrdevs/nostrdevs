@@ -2,9 +2,7 @@
   "title": "nostr.band defunct, along with other components.",
   "url": "https://nostr.band",
   "date": "2026-02-24",
-  "context":"Nostr.band is dead and so is wss:/relay.nostr.band
-Nostr-login module which dozens, if not hundreds of clients use is non functional, slow, laggy unusable.
-What a disappointment despite so much investment"
+  "context":"Nostr.band is dead and so is wss:/relay.nostr.band. Nostr-login module which dozens, if not hundreds of clients use is non functional, slow, laggy unusable. What a disappointment despite so much investment",
   "tags": [
     "infrastructure",
     "client",
