@@ -121,6 +121,7 @@ async function build() {
     "events.js",
     "feed.js",
     "diff.js",
+    "theme.js",
   ];
   for (const file of staticFiles) {
     if (existsSync(file)) {
