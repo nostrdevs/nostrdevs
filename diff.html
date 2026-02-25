@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About - NostrDevs</title>
+        <title>awesome-nostr Diff | NostrDevs</title>
         <link rel="stylesheet" href="style.css" />
         <link
             href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
@@ -48,62 +48,27 @@
                 </div>
             </header>
 
-            <div class="Home">
-                <h2>About NostrDevs</h2>
-
-                <p class="Home-about">
-                    NostrDevs is a community for those interested in discussing
-                    and participating in the research and development of Nostr
-                    and related protocols.
+            <div class="Diff">
+                <p class="Diff-about">
+                    What changed in
+                    <a href="https://github.com/aljazceru/awesome-nostr" target="_blank" rel="noopener">awesome-nostr</a>
+                    between meetups? Select two dates to see additions and removals.
                 </p>
 
-                <h3>How It Works</h3>
+                <div class="Diff-controls">
+                    <div class="Diff-date-pair">
+                        <label for="from-date">From:</label>
+                        <select id="from-date"></select>
+                    </div>
+                    <div class="Diff-date-pair">
+                        <label for="to-date">To:</label>
+                        <select id="to-date"></select>
+                    </div>
+                    <button id="load-diff" class="Diff-load-btn">Load Diff</button>
+                </div>
 
-                <p>
-                    This site is a curated collection of Nostr development
-                    resources designed specifically for meetup organizers and
-                    community members. Anyone can submit an item for inclusion
-                    by clicking the "Submit Item" button on the homepage, which
-                    creates a GitHub pull request.
-                </p>
-
-                <p>
-                    Use the date filter to easily view everything new since your
-                    last meetup. Simply select the date of your last gathering,
-                    and you'll see all the resources, updates, and discussions
-                    that have been added since then. This makes it simple to
-                    stay current and prepare for your next community discussion.
-                </p>
-
-                <p>
-                    You can also filter by tags such as "nips" (protocol specs),
-                    "clients" (applications), and "relays" (infrastructure) to
-                    focus on specific areas of interest.
-                </p>
-
-                <h3>Contributing</h3>
-
-                <p>
-                    To contribute a new resource, click the "Submit Item" button
-                    on the homepage. You'll be guided through creating a GitHub
-                    pull request with your submission. All contributions are
-                    welcome!
-                </p>
-
-                <p>
-                    Alternatively, you can manually add a JSON file to the
-                    <code>/items</code> directory in the
-                    <a
-                        href="https://github.com/dtdannen/nostrdevs"
-                        target="_blank"
-                        rel="noopener"
-                        >GitHub repository</a
-                    >.
-                </p>
-
-                <p>
-                    <a href="/">&larr; Back to Resources</a>
-                </p>
+                <div id="diff-status" class="Diff-status hidden"></div>
+                <div id="diff-results" class="Diff-results"></div>
             </div>
 
             <footer class="Footer">
@@ -138,5 +103,7 @@
                 </div>
             </footer>
         </div>
+
+        <script src="diff.js"></script>
     </body>
 </html>
